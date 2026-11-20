@@ -95,6 +95,11 @@ Direct Nightly URL: `https://github.com/aswadhkrishna22-prog/Yougram/releases/ta
 
 ## 7. Changelog & Project Updates
 
+### [2026-11-20] — Fix CI Build: Missing String Resource in trending_row
+- **Build Fix:** Fixed `Task :app:processDebugResources FAILED` caused by missing `@string/more` resource in `trending_row.xml`.
+- **String Resolution:** Updated content description in `trending_row.xml` to `@string/tooltip_options` and added `<string name="more">More options</string>` to `values/strings.xml`.
+- **CI Verification:** Monitored GitHub Actions workflow to ensure green build and release artifact generation.
+
 ### [2026-11-20] — Masterpiece Red & White UI + Liquid Glass Transformation
 - **YouTube Red & White Palette:** Upgraded default accent color to vibrant YouTube Red (`#FF0000` Light / `#FF0033` Dark), crisp white background (`#FFFFFF`), and authentic YouTube Dark background (`#0F0F0F`).
 - **Liquid Glass Effects:**
