@@ -10,7 +10,7 @@
         android:id="@+id/trendsFragment"
         android:icon="@drawable/ic_trending"
         android:title="@string/trends"
-        android:visible="false" />
+        android:visible="true" />
 
     <item
         android:id="@+id/subscriptionsFragment"

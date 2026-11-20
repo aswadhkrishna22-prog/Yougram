@@ -15,10 +15,18 @@
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tab_layout"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="46dp"
             android:layout_weight="1.0"
+            android:layout_marginStart="8dp"
             android:requiresFadingEdge="horizontal"
-            app:tabMode="scrollable" />
+            app:tabMode="scrollable"
+            app:tabIndicatorColor="?attr/colorPrimary"
+            app:tabIndicatorHeight="3dp"
+            app:tabIndicatorFullWidth="false"
+            app:tabSelectedTextColor="?attr/colorPrimary"
+            app:tabTextColor="?attr/colorOnSurfaceVariant"
+            app:tabRippleColor="#26FF0033"
+            android:background="@android:color/transparent" />
 
         <com.google.android.material.button.MaterialButton
             style="@style/Widget.Material3Expressive.Button.IconButton.Tonal"

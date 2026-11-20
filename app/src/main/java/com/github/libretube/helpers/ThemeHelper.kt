@@ -24,7 +24,7 @@ object ThemeHelper {
     fun updateTheme(activity: AppCompatActivity) {
         var accentColor = PreferenceHelper.getString(PreferenceKeys.ACCENT_COLOR, "")
         if (accentColor.isEmpty()) {
-            accentColor = "blue"
+            accentColor = "red"
             PreferenceHelper.putString(PreferenceKeys.ACCENT_COLOR, accentColor)
         }
 
@@ -108,9 +108,7 @@ object ThemeHelper {
      * Get the styled app name
      */
     fun getStyledAppName(context: Context): Spanned {
-        val colorPrimary = getThemeColor(context, androidx.appcompat.R.attr.colorPrimaryDark)
-        val hexColor = "#%06X".format(0xFFFFFF and colorPrimary)
-        return "You<span style='color:$hexColor';>gram</span>"
+        return "You<span style='color:#FF0033;'>gram</span>"
             .parseAsHtml(HtmlCompat.FROM_HTML_MODE_COMPACT)
     }
 

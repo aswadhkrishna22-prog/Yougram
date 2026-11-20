@@ -52,18 +52,21 @@
 
 ---
 
-## 4. UI Design System & Telegram Aesthetics
-The interface is designed specifically for high-contrast OLED displays with the iconic Telegram visual hierarchy:
+## 4. UI Design System & Masterpiece YouTube + Liquid Glass Aesthetics
+The interface combines YouTube's signature Red & White / Deep Dark visual identity with modern frosted glass (liquid glass) styling:
 
-| Token / Role | Hex Code | Purpose / Usage |
+| Token / Role | Hex Code / Drawable | Purpose / Usage |
 |---|---|---|
-| **Primary Accent (Telegram Blue)** | `#2AABEE` | Buttons, active icons, tabs, slider thumbs, progress bars |
-| **Dark Secondary Accent** | `#5288C1` | Secondary indicators, badges, links, subtle highlights |
-| **OLED Pitch Black** | `#000000` | Background canvas, player letterboxing, system navigation bars |
-| **Telegram Card Surface** | `#17212B` | Feed cards, bottom sheet backgrounds, modal dialogs |
-| **Telegram Surface Variant** | `#0E1621` | Top app bars, bottom navigation bar, search headers |
-| **Text Primary** | `#FFFFFF` | Main titles, video headers, primary labels |
-| **Text Secondary** | `#708499` | Channel metadata, view count, timestamps, subtitles |
+| **Primary Accent (YouTube Red)** | `#FF0000` (Light) / `#FF0033` (Dark) | Active tabs, play buttons, progress bars, Shorts badge, brand logo |
+| **Dark Secondary Accent** | `#AAAAAA` | Video metadata (channel name, views, time ago) |
+| **Light Canvas (Pure White)** | `#FFFFFF` | Light mode clean background and surfaces |
+| **Dark Canvas (YouTube Dark)** | `#0F0F0F` | Modern YouTube dark mode canvas |
+| **OLED Pure Black** | `#000000` | Pure Black theme background |
+| **Liquid Glass App Bar** | `@drawable/liquid_glass_appbar_bg` | Translucent top bar with subtle bottom glass stroke |
+| **Liquid Glass Bottom Nav** | `@drawable/liquid_glass_nav_bg` | Frosted dock navigation with 18dp rounded top corners & glass border |
+| **Liquid Glass Duration Badge** | `#CC000000` (`@color/duration_background_color`) | Frosted black pill badge on thumbnail corner |
+| **YouTube Shorts Badge** | `#E6FF0033` + `@drawable/ic_shorts` | Red glass pill overlay indicating Shorts |
+| **Full-Width Video Cards** | `14dp` Corner Radius, 16:9 ratio | Modern YouTube Android app edge-to-edge thumbnail styling |
 
 ---
 
@@ -92,8 +95,25 @@ Direct Nightly URL: `https://github.com/aswadhkrishna22-prog/Yougram/releases/ta
 
 ## 7. Changelog & Project Updates
 
+### [2026-11-20] — Masterpiece Red & White UI + Liquid Glass Transformation
+- **YouTube Red & White Palette:** Upgraded default accent color to vibrant YouTube Red (`#FF0000` Light / `#FF0033` Dark), crisp white background (`#FFFFFF`), and authentic YouTube Dark background (`#0F0F0F`).
+- **Liquid Glass Effects:**
+  - Added `@drawable/liquid_glass_nav_bg.xml`: Translucent floating bottom navigation with 18dp rounded top corners and frosted glass border.
+  - Added `@drawable/liquid_glass_appbar_bg.xml`: Translucent top bar with frosted bottom separator.
+  - Added `@drawable/ic_shorts.xml`: Vector icon for YouTube Shorts.
+- **Masterpiece Thumbnails & Cards (`trending_row.xml`):**
+  - Upgraded thumbnail cards to `14dp` corner radius with 16:9 aspect ratio matching the official YouTube Android app.
+  - Added dedicated YouTube Shorts badge (`shorts_badge_card`) with red glass pill.
+  - Added 3-dots more menu button (`@+id/more_options`) for 1-tap options sheet.
+  - High-contrast typography (`15sp` bold title, `12sp` channel & view stats).
+- **Trending / Explore Tab:**
+  - Enabled Trending on the bottom navigation bar (`bottom_menu.xml`) so users can access Trending / Explore right from the main dock.
+  - Enhanced category tabs in `fragment_trends.xml` with YouTube Red indicators and smooth ripple.
+- **Search Experience:**
+  - Refined `suggestion_row.xml` with sleek liquid glass spacing, crisp typography, and subtle ripples.
+
 ### [2026-11-20] — Initial Release & Master Knowledge Setup
-- **Initial Release:** Created and pushed initial project release with Telegram aesthetics, 100% ad-blocking, SponsorBlock, PiP, background play, and RYD.
+- **Initial Release:** Created and pushed initial project release with 100% ad-blocking, SponsorBlock, PiP, background play, and RYD.
 - **CI Build:** GitHub Actions completed the first build (`✓ CI elapsed 5m 55s`).
 - **Release:** Published `Yougram Nightly 20-11-2026` with `Yougram.apk` (20.52 MiB).
 - **Knowledge Base:** Initialized `YOUGRAM_MASTER_KNOWLEDGE.md` as the permanent architecture and project memory.

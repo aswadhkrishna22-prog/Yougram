@@ -8,7 +8,7 @@
     android:gravity="center_vertical"
     android:orientation="horizontal"
     android:paddingHorizontal="16dp"
-    android:paddingVertical="8dp">
+    android:paddingVertical="11dp">
 
     <com.github.libretube.ui.views.DrawableTextView
         android:id="@+id/suggestion_text"
@@ -16,19 +16,22 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="10dp"
         android:layout_weight="1"
-        android:drawablePadding="15dp"
+        android:drawablePadding="16dp"
+        android:textSize="15sp"
+        android:textColor="?colorOnSurface"
         android:textAlignment="viewStart"
         tools:drawableStartCompat="@drawable/ic_search"
         tools:text="Suggestion item" />
 
     <ImageView
         android:id="@+id/delete_history"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="10dp"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginEnd="6dp"
         android:background="?attr/selectableItemBackgroundBorderless"
-        android:padding="5dp"
+        android:padding="6dp"
         android:src="@drawable/ic_close"
+        app:tint="?colorOnSurfaceVariant"
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -36,11 +39,12 @@
 
     <ImageView
         android:id="@+id/arrow"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
         android:background="?attr/selectableItemBackgroundBorderless"
-        android:padding="5dp"
+        android:padding="6dp"
         android:src="@drawable/ic_arrow_up_left"
+        app:tint="?colorOnSurfaceVariant"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:shapeAppearanceOverlay="@style/RoundedImageView" />

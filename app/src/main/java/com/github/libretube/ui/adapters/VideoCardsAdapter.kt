@@ -114,6 +114,18 @@ class VideoCardsAdapter(private val columnWidthDp: Float? = null) :
                 NavigationHelper.navigateVideo(root.context, PlayerData(videoId))
             }
 
+            moreOptions.setOnClickListener {
+                fragmentManager.setFragmentResultListener(
+                    VideoOptionsBottomSheet.VIDEO_OPTIONS_SHEET_REQUEST_KEY,
+                    activity
+                ) { _, _ ->
+                    notifyItemChanged(position)
+                }
+                val sheet = VideoOptionsBottomSheet()
+                sheet.arguments = bundleOf(IntentData.streamItem to video)
+                sheet.show(fragmentManager, VideoCardsAdapter::class.java.name)
+            }
+
             root.setOnLongClickListener {
                 fragmentManager.setFragmentResultListener(
                     VideoOptionsBottomSheet.VIDEO_OPTIONS_SHEET_REQUEST_KEY,
@@ -126,6 +138,8 @@ class VideoCardsAdapter(private val columnWidthDp: Float? = null) :
                 sheet.show(fragmentManager, VideoCardsAdapter::class.java.name)
                 true
             }
+
+            shortsBadgeCard.isVisible = video.isShort
 
             // always hide the icon, to avoid issues where the icon is recycled and shown until the web requests succeeds
             sponsorBadgeCard.isVisible = false
